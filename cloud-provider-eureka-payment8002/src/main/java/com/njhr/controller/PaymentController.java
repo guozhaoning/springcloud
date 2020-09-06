@@ -39,7 +39,7 @@ public class PaymentController {
         log.info("*****查询结果：" + payment);
         if (payment != null) {  //说明有数据，能查询成功
             return new CommonResult(200, "插入数据库成功,serverPort:"+serverPort, payment);
-        }  else {
+        } else {
             return new CommonResult(444, "没有对应记录，查询ID：" + id, null);
         }
     }
