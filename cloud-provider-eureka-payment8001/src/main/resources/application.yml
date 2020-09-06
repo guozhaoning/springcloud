@@ -26,3 +26,8 @@ eureka:
 #      defaultZone: http://localhost:7001/eureka
 #      注册中心集群配置
       defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
+#      主机名称修改
+  instance:
+    instance-id: payment8001
+#    鼠标放在服务主机上有ip地址显示
+    prefer-ip-address: true
