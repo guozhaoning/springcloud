@@ -13,5 +13,5 @@ eureka:
 #    enable-self-preservation: false
 spring:
   application:
-    name: cloud-provider-hystrix-payment
+    name: CLOUD-PROVIDER-HYSTRIX-PAYMENT
 #    eviction-interval-timer-in-ms: 2000
