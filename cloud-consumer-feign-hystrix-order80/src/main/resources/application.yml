@@ -18,13 +18,22 @@
   feign:
     hystrix:
       enabled: true
-    client:
-      config:
-        default:  # 服务名，default表示所有服务
-          connectTimeout: 10000
-          readTimeout: 60000
-          loggerLevel: full  # full | basic | none | headers
-          #requestInterceptors: 拦截器
+#注意
+#openfeign开启自身容错后，需要同时开启ribbon的超时控制以及hystrix的超时设置，否则将会一直超时，不会接受服务提供者返回的数据，直接调用服务降级的方法
+
+  hystrix:
+    command:
+      default:
+        execution:
+          isolation:
+            thread:
+              timeoutInMilliseconds: 15000
+
+
+  ribbon:
+    ReadTimeout:  5000
+    ConnectTimeout: 500
+
 
 
 

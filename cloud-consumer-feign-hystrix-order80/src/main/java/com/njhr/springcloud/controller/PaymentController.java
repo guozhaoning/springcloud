@@ -39,9 +39,7 @@ public class PaymentController {
      * @return
      */
 //  指定方法
-//    @HystrixCommand(fallbackMethod = "fallBack",commandProperties = {
-//            @HystrixProperty(name =  "execution.isolation.thread.timeoutInMilliseconds",value = "1500")//3秒钟以内是正常的业务
-//    })
+//    @HystrixCommand(fallbackMethod = "fallBack")
     //没有指定方法使用统一方法
 //    @HystrixCommand
     @GetMapping("/consumer/payment/hystrix/timeout/{id}")

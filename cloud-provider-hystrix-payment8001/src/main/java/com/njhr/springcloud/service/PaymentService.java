@@ -15,20 +15,20 @@ public class PaymentService {
     }
 
     @HystrixCommand(fallbackMethod = "paymentInfo_TimeOutHandler", commandProperties = {
-            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "150000")
+            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "10000")
     })
     public String paymentInfo_TimeOut(Integer id) {
         //降级允许等待3秒钟
         //定义异常，是服务报错，运行服务降级
 //        int a = 10/0;
         //超时运行降级
-        int timeNum = 1;
+
         try {
-            TimeUnit.SECONDS.sleep(timeNum);
+            TimeUnit.SECONDS.sleep(1);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        return "线程池:" + Thread.currentThread().getName() + " paymentInfo_TimeOut,id:" + id + "\t" + "呜呜呜" + "耗时(秒)" + timeNum;
+        return "线程池:" + Thread.currentThread().getName() + " paymentInfo_TimeOut,id:" + id + "\t" + "呜呜呜" + "耗时(秒)" ;
     }
 
     /**
