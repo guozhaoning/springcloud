@@ -18,7 +18,10 @@ public class HystrixPayment8001Main {
     }
 
 
-
+    /**
+     * 此bean为使用dashboard监控
+     * @return
+     */
     @Bean
     public ServletRegistrationBean getServlet(){
         HystrixMetricsStreamServlet streamServlet = new HystrixMetricsStreamServlet();

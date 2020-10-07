@@ -18,8 +18,8 @@
   feign:
     hystrix:
       enabled: true
-
-
+#注意
+#openfeign开启自身容错后，需要同时开启ribbon的超时控制以及hystrix的超时设置，否则将会一直超时，不会接受服务提供者返回的数据，直接调用服务降级的方法
 
   hystrix:
     command:
@@ -33,6 +33,7 @@
   ribbon:
     ReadTimeout:  5000
     ConnectTimeout: 500
+
 
 
 
