@@ -6,14 +6,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-//动态刷新注解，可实现配置文件的
 @RefreshScope
-public class ConfigController {
+public class ConfigClientController {
+    @Value("${server.port}")
+    private String serverPort;
     @Value("${config.info}")
     private String configInfo;
 
-    @GetMapping("/config")
+    @GetMapping("/configInfo")
     public String getConfigInfo() {
-        return configInfo;
+        return "serverPort:" + serverPort + "\t\n\nconfigInfo:" + configInfo;
     }
 }

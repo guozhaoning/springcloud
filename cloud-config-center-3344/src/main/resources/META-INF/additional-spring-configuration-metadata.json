@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "spring.management.endpoints.web.exposure.include",
+      "type": "java.lang.String",
+      "description": "Description for spring.management.endpoints.web.exposure.include."
+  }
+] }
