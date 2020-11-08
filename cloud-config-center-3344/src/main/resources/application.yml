@@ -31,3 +31,6 @@ management:
     web:
       exposure:
         include: 'bus-refresh'
+#        使用命令 curl -X POST "http://localhost:3344/actuator/bus-refresh"  刷新全部
+#                   curl -X POST "http://localhost:3344/actuator/bus-refresh/config-client:3355"  刷新局部
+#                    config-client为服务名加端口号
